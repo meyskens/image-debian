@@ -42,6 +42,7 @@ RUN apt-get -q update && \
 	ethstatus \
 	file \
 	fio \
+	haveged \
 	htop \
 	ioping \
 	iotop \
@@ -100,6 +101,10 @@ RUN locale-gen
 RUN update-rc.d scw-ssh-keys defaults && \
     update-rc.d scw-force-dhclient defaults && \
     update-rc.d scw-sync-kernel-modules defaults
+
+
+# Fix permissions
+RUN chmod 755 /etc/default
 
 
 # Clean rootfs from image-builder

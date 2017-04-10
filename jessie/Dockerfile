@@ -42,6 +42,7 @@ RUN apt-get -q update && \
 	ethstatus \
 	file \
 	fio \
+	haveged \
 	htop \
 	ioping \
 	iotop \
@@ -119,6 +120,10 @@ RUN systemctl enable \
 
 RUN rm -f /sbin/init \
  && ln -sf ../lib/systemd/systemd /sbin/init
+
+
+# Fix permissions
+RUN chmod 755 /etc/default
 
 
 # Clean rootfs from image-builder
