@@ -50,6 +50,7 @@ RUN apt-get -q update && \
 	iptables \
 	iputils-ping \
 	isc-dhcp-client \
+	kmod \
 	less \
 	libnss-myhostname \
 	locales \
@@ -59,7 +60,6 @@ RUN apt-get -q update && \
 	make \
 	man-db \
 	mg \
-	module-init-tools \
 	mosh \
 	nano \
 	net-tools \
